@@ -22,7 +22,7 @@ import madelyntav.c4q.nyc.chipchop.DBObjects.Order;
 import madelyntav.c4q.nyc.chipchop.R;
 import madelyntav.c4q.nyc.chipchop.fragments.Fragment_Buyer_OrderDetails;
 
-public class BuyerOrdersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class BuyerOrdersAdapter extends RecyclerView.Adapter<BuyerOrdersAdapter.BuyerOrdersViewHolder> {
 
     private List<Order> orderItems;
     private Context context;
@@ -33,48 +33,14 @@ public class BuyerOrdersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         this.orderItems = orderItems;
     }
 
-    private class BuyerOrdersViewHolder extends RecyclerView.ViewHolder {
-
-        CardView container;
-        TextView timeStamp;
-        TextView total;
-        TextView nameOfSeller;
-        TextView deliveryMethod;
-        TextView sellerAddress;
-
-
-        public BuyerOrdersViewHolder(View itemView) {
-            super(itemView);
-
-            total = (TextView) itemView.findViewById(R.id.order_cost_tv);
-            container = (CardView) itemView.findViewById(R.id.card_view);
-            nameOfSeller = (TextView) itemView.findViewById(R.id.seller_name_tv);
-            timeStamp = (TextView) itemView.findViewById(R.id.order_timestamp_tv);
-            deliveryMethod = (TextView) itemView.findViewById(R.id.delivery_method_tv);
-            sellerAddress = (TextView) itemView.findViewById(R.id.seller_address_tv);
-
-            container.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    BuyActivity activity = (BuyActivity) context;
-                    activity.setOrderToView(orderItems.get(getAdapterPosition()));
-                    activity.replaceFragment(new Fragment_Buyer_OrderDetails());
-                }
-            });
-
-        }
-
-    }
-
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int position) {
-
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.buyerorder_list_item, parent, false);
+    public BuyerOrdersViewHolder onCreateViewHolder(ViewGroup parent, int position) {
+        View itemView = LayoutInflater.from(context).inflate(R.layout.buyerorder_list_item, parent, false);
         return new BuyerOrdersViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(BuyerOrdersViewHolder viewHolder, int position) {
 
         String deliveryMethod = "";
         Order order = orderItems.get(position);
@@ -118,5 +84,37 @@ public class BuyerOrdersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public int getItemCount() {
         return orderItems.size();
+    }
+
+    public class BuyerOrdersViewHolder extends RecyclerView.ViewHolder {
+
+        private CardView container;
+        private TextView timeStamp;
+        private TextView total;
+        private TextView nameOfSeller;
+        private TextView deliveryMethod;
+        private TextView sellerAddress;
+
+        public BuyerOrdersViewHolder(View itemView) {
+            super(itemView);
+
+            total = (TextView) itemView.findViewById(R.id.order_cost_tv);
+            container = (CardView) itemView.findViewById(R.id.card_view);
+            nameOfSeller = (TextView) itemView.findViewById(R.id.seller_name_tv);
+            timeStamp = (TextView) itemView.findViewById(R.id.order_timestamp_tv);
+            deliveryMethod = (TextView) itemView.findViewById(R.id.delivery_method_tv);
+            sellerAddress = (TextView) itemView.findViewById(R.id.seller_address_tv);
+
+            container.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    BuyActivity activity = (BuyActivity) context;
+                    activity.setOrderToView(orderItems.get(getAdapterPosition()));
+                    activity.replaceFragment(new Fragment_Buyer_OrderDetails());
+                }
+            });
+
+        }
+
     }
 }
