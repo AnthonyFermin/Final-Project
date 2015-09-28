@@ -2,9 +2,6 @@ package madelyntav.c4q.nyc.chipchop.DBObjects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-/**
- * Created by c4q-madelyntavarez on 8/11/15.
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
     String streetAddress;

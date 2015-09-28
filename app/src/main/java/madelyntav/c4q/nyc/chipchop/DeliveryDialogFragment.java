@@ -7,14 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-
-import madelyntav.c4q.nyc.chipchop.DBObjects.Order;
 import madelyntav.c4q.nyc.chipchop.DBObjects.Seller;
 
-/**
- * Created by alvin2 on 9/12/15.
- */
-public class DeliveryDialog extends android.support.v4.app.DialogFragment {
+public class DeliveryDialogFragment extends android.support.v4.app.DialogFragment {
 
     Button deliverButton, pickupButton;
     Seller seller;
@@ -53,7 +48,7 @@ public class DeliveryDialog extends android.support.v4.app.DialogFragment {
                 HelperMethods.getCurrentOrder().setIsPickup(false);
                 getDialog().dismiss();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
-                PaymentDialog alertDialog = new PaymentDialog();
+                PaymentDialogFragment alertDialog = new PaymentDialogFragment();
                 alertDialog.show(fm, "fragment_alert");
             }
         });
@@ -66,7 +61,7 @@ public class DeliveryDialog extends android.support.v4.app.DialogFragment {
                 HelperMethods.getCurrentOrder().setToDeliver(false);
                 getDialog().dismiss();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
-                PaymentDialog alertDialog = new PaymentDialog();
+                PaymentDialogFragment alertDialog = new PaymentDialogFragment();
                 alertDialog.show(fm, "fragment_alert");
             }
         });

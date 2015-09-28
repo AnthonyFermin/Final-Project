@@ -21,9 +21,6 @@ import java.util.List;
 import madelyntav.c4q.nyc.chipchop.DBObjects.Item;
 import madelyntav.c4q.nyc.chipchop.R;
 
-/**
- * Created by alvin2 on 8/16/15.
- */
 public class CheckoutListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private List<Item> checkoutItems;

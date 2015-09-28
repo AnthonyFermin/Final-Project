@@ -36,30 +36,28 @@ public class MainActivity extends AppCompatActivity {
     Seller seller;
     Address address;
     Address sellerAddress;
-    String sellerName="BRailyn Torres";
-    String sellerPhone="646-777-9087";
-    String sellerStreet="256 Wadsworth Avenue";
-    String sellerApt="2A";
-    String sellerCity="New York";
-    String sellerState="NY";
-    String sellerZipcode="10033";
-    String sellerEmail="JackFinnish@gmail.com";
-    Seller seller2;
-    ArrayList<Seller> activeSellerList;
+    private String sellerName="BRailyn Torres";
+    private String sellerPhone="646-777-9087";
+    private String sellerStreet="256 Wadsworth Avenue";
+    private String sellerApt="2A";
+    private String sellerCity="New York";
+    private String sellerState="NY";
+    private String sellerZipcode="10033";
+    private String sellerEmail="JackFinnish@gmail.com";
+    private Seller seller2;
     private static DBHelper dbHelper = null;
-    Item item2;
-    Item item3;
-    ArrayList<Item> itemsForSale;
-    ArrayList<User> userList;
-    User user2;
-    DBCallback emptyCallback;
+    private Item item2;
+    private Item item3;
+    private ArrayList<Item> itemsForSale;
+    private ArrayList<User> userList;
+    private User user2;
+    private DBCallback emptyCallback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dbHelper=DBHelper.getDbHelper(this);
-        activeSellerList=new ArrayList<>();
         userList=new ArrayList<>();
 
         emptyCallback = new DBCallback() {

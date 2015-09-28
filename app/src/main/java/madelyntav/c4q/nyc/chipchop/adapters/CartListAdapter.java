@@ -29,9 +29,6 @@ import madelyntav.c4q.nyc.chipchop.DBObjects.Order;
 import madelyntav.c4q.nyc.chipchop.FoodItemSelectDialog;
 import madelyntav.c4q.nyc.chipchop.R;
 
-/**
- * Created by alvin2 on 8/16/15.
- */
 public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Button removeItemButton;

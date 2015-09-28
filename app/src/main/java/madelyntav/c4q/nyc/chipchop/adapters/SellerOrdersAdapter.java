@@ -21,9 +21,6 @@ import madelyntav.c4q.nyc.chipchop.R;
 import madelyntav.c4q.nyc.chipchop.SellActivity;
 import madelyntav.c4q.nyc.chipchop.fragments.Fragment_Seller_OrderDetails;
 
-/**
- * Created by alvin2 on 8/16/15.
- */
 public class SellerOrdersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Order> orderItems;

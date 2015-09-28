@@ -25,9 +25,6 @@ import madelyntav.c4q.nyc.chipchop.HelperMethods;
 import madelyntav.c4q.nyc.chipchop.R;
 import madelyntav.c4q.nyc.chipchop.fragments.Fragment_Buyer_SellerProfile;
 
-/**
- * Created by alvin2 on 8/20/15.
- */
 public class SellerListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Seller> sellers;

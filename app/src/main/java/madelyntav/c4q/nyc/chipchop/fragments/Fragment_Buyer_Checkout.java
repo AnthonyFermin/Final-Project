@@ -20,9 +20,9 @@ import madelyntav.c4q.nyc.chipchop.DBObjects.DBHelper;
 import madelyntav.c4q.nyc.chipchop.DBObjects.Item;
 import madelyntav.c4q.nyc.chipchop.DBObjects.Order;
 import madelyntav.c4q.nyc.chipchop.DBObjects.Seller;
-import madelyntav.c4q.nyc.chipchop.DeliveryDialog;
+import madelyntav.c4q.nyc.chipchop.DeliveryDialogFragment;
 import madelyntav.c4q.nyc.chipchop.HelperMethods;
-import madelyntav.c4q.nyc.chipchop.PaymentDialog;
+import madelyntav.c4q.nyc.chipchop.PaymentDialogFragment;
 import madelyntav.c4q.nyc.chipchop.R;
 import madelyntav.c4q.nyc.chipchop.adapters.CheckoutListAdapter;
 
@@ -73,12 +73,12 @@ public class Fragment_Buyer_Checkout extends Fragment {
                         HelperMethods.getCurrentOrder().setToDeliver(false);
                     }
                     FragmentManager fm = getActivity().getSupportFragmentManager();
-                    PaymentDialog alertDialog = new PaymentDialog();
+                    PaymentDialogFragment alertDialog = new PaymentDialogFragment();
                     alertDialog.show(fm, "fragment_alert");
                 }else {
 
                     FragmentManager fm = activity.getSupportFragmentManager();
-                    DeliveryDialog alertDialog = new DeliveryDialog();
+                    DeliveryDialogFragment alertDialog = new DeliveryDialogFragment();
                     alertDialog.show(fm, "fragment_alert");
                 }
 

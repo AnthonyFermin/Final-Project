@@ -105,12 +105,8 @@ public class Fragment_Buyer_Map extends Fragment implements OnMapReadyCallback, 
         bindViews();
         initializeMap();
         setListeners();
-
         initializeListPanel();
-
         addSellerMarkers();
-
-
 
         return root;
     }

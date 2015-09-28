@@ -22,14 +22,11 @@ import madelyntav.c4q.nyc.chipchop.DBObjects.Order;
 import madelyntav.c4q.nyc.chipchop.Payments.PaymentsActivity;
 import madelyntav.c4q.nyc.chipchop.fragments.Fragment_Buyer_Orders;
 
-/**
- * Created by alvin2 on 9/10/15.
- */
-public class PaymentDialog extends android.support.v4.app.DialogFragment {
+public class PaymentDialogFragment extends android.support.v4.app.DialogFragment {
 
     View coordinatorLayoutView;
-    ImageView confirmImage;
-    Button cardButton, cashButton;
+    private ImageView confirmImage;
+    private Button cardButton, cashButton;
     private BuyActivity activity;
     private Order order;
     private DBHelper dbHelper;

@@ -13,16 +13,13 @@ import madelyntav.c4q.nyc.chipchop.DBObjects.DBHelper;
 import madelyntav.c4q.nyc.chipchop.DBObjects.Order;
 import madelyntav.c4q.nyc.chipchop.DBObjects.Review;
 
-/**
- * Created by alvin2 on 8/22/15.
- */
 public class ReviewDialogFragment extends android.support.v4.app.DialogFragment implements View.OnClickListener {
 
-    Button submitButton;
-    Order order;
-    RatingBar ratingBar;
-    DBHelper dbHelper;
-    Review review;
+    private Button submitButton;
+    private Order order;
+    private RatingBar ratingBar;
+    private DBHelper dbHelper;
+    private Review review;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
