@@ -5,5 +5,5 @@ Team Name
 ChipChoppers
 
 Team Members
-Madelyn, Anthony and Alvin
+Madelyn Tavarez, Anthony Fermin and Alvin Kuang
 
