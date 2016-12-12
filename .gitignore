@@ -1,5 +1,6 @@
 .gradle
 /local.properties
+/credential.properties
 
 .idea
 /.idea/workspace.xml

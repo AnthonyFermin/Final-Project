@@ -169,46 +169,46 @@ public class PaymentsActivity extends AppCompatActivity implements GoogleApiClie
 
     public void onClickConfirmPayment(final String cardNum, final int cardMonth, final int cardYear, final String cardCVC, String name, String streetAddress, String apt, String city, String state, String zipCode, String country) {
 
-        final Card card = new Card(cardNum, cardMonth, cardYear, cardCVC, name, streetAddress, apt, city, state, zipCode, country);
+//        final Card card = new Card(cardNum, cardMonth, cardYear, cardCVC, name, streetAddress, apt, city, state, zipCode, country);
 
-        if (!card.validateCard()) {
-            // Show errors
-            Toast.makeText(this, "Invalid Payment Information", Toast.LENGTH_SHORT).show();
-        } else {
-            //TODO activate once we have Encrypted Info and SSL Certificate has been added and we have user Info transfered in (UID, NAME, FULL Address)
+//        if (!card.validateCard()) {
+//            // Show errors
+//            Toast.makeText(this, "Invalid Payment Information", Toast.LENGTH_SHORT).show();
+//        } else {
+//            //TODO activate once we have Encrypted Info and SSL Certificate has been added and we have user Info transfered in (UID, NAME, FULL Address)
 //            user.setCardNumber(cardNum);
 //            user.setCardExpirationMonth(cardMonth);
 //            user.setCardExpirationYear(cardYear);
 //            user.setCardCVC(cardCVC);
 //            dbHelper.addUserProfileInfoToDB(user);
-        }
-
-        card.validateNumber();
-        card.validateCVC();
-
-        try {
-            Stripe stripe = new Stripe(secretPublishableTestKey);
-            stripe.setDefaultPublishableKey(secretPublishableTestKey);
-
-            stripe.createToken(
-                    card,
-                    new TokenCallback() {
-                        public void onSuccess(Token token) {
-                            Toast.makeText(PaymentsActivity.this, "Payment Info Submitted Successfully", Toast.LENGTH_LONG).show();
-                            Log.d("TokenIS", token.toString());
-                            price = (order.getPrice()+1) * 100;
-
-                            createCharge(price, token, cardNum, cardMonth, cardYear, cardCVC);
-                        }
-
-                        public void onError(Exception error) {
-                            // Show localized error message
-                            Toast.makeText(PaymentsActivity.this, "Error Retrieving Token", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        } catch (AuthenticationException e) {
-            e.printStackTrace();
-        }
+//        }
+//
+//        card.validateNumber();
+//        card.validateCVC();
+//
+//        try {
+//            Stripe stripe = new Stripe(secretPublishableTestKey);
+//            stripe.setDefaultPublishableKey(secretPublishableTestKey);
+//
+//            stripe.createToken(
+//                    card,
+//                    new TokenCallback() {
+//                        public void onSuccess(Token token) {
+//                            Toast.makeText(PaymentsActivity.this, "Payment Info Submitted Successfully", Toast.LENGTH_LONG).show();
+//                            Log.d("TokenIS", token.toString());
+//                            price = (order.getPrice()+1) * 100;
+//
+//                            createCharge(price, token, cardNum, cardMonth, cardYear, cardCVC);
+//                        }
+//
+//                        public void onError(Exception error) {
+//                            // Show localized error message
+//                            Toast.makeText(PaymentsActivity.this, "Error Retrieving Token", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//        } catch (AuthenticationException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
