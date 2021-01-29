@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
@@ -33,7 +36,7 @@ public class Fragment_Buyer_ViewCart extends Fragment {
     public static final String TAG = "fragment_buyer_view_cart";
     public static final String FROM_CART = "from_cart";
 
-    android.support.design.widget.FloatingActionButton checkoutButton;
+    ImageButton checkoutButton;
     private ArrayList<Item> cartItems;
     private RecyclerView cartList;
     private DBHelper dbHelper;
@@ -98,10 +101,12 @@ public class Fragment_Buyer_ViewCart extends Fragment {
     }
 
     private void bindViews(View root) {
-        checkoutButton = (android.support.design.widget.FloatingActionButton) root.findViewById(R.id.checkoutButton);
+        checkoutButton = (ImageButton) root.findViewById(R.id.checkoutButton);
+        final Animation myRotation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate);
+        checkoutButton.startAnimation(myRotation);
+
         cartList = (RecyclerView) root.findViewById(R.id.cart_list);
         coordinatorLayoutView = root.findViewById(R.id.snackbarPosition);
-
     }
 
     private void initializeData() {

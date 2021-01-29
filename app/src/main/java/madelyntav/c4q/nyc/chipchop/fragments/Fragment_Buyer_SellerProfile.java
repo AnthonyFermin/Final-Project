@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -38,7 +41,7 @@ public class Fragment_Buyer_SellerProfile extends Fragment {
 
     public static final String TAG = "fragment_buyer_seller_profile";
 
-    android.support.design.widget.FloatingActionButton cartButton;
+    ImageButton cartButton;
     private ArrayList<Item> foodItems;
     private RecyclerView foodList;
 
@@ -47,7 +50,7 @@ public class Fragment_Buyer_SellerProfile extends Fragment {
 
     View coordinatorLayoutView;
     CircleImageView storeImage;
-    TextView storeName,storeDescription;
+    TextView storeName,storeDescription, cookingStatus;
     TextView deliveryTV, pickupTV;
     RatingBar ratingBar;
 
@@ -161,8 +164,10 @@ public class Fragment_Buyer_SellerProfile extends Fragment {
         cartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 BuyActivity activity = (BuyActivity) getActivity();
                 activity.replaceFragment(new Fragment_Buyer_ViewCart());
+
             }
         });
     }
@@ -178,10 +183,23 @@ public class Fragment_Buyer_SellerProfile extends Fragment {
         containingView = (LinearLayout) root.findViewById(R.id.container);
         containingView.setVisibility(View.INVISIBLE);
 
-        cartButton = (android.support.design.widget.FloatingActionButton) root.findViewById(R.id.viewCartButton);
+        cartButton = (ImageButton) root.findViewById(R.id.viewCartButton);
+        final Animation myRotation2 = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate);
+        cartButton.startAnimation(myRotation2);
+
         foodList = (RecyclerView) root.findViewById(R.id.seller_items_list);
         storeImage = (CircleImageView) root.findViewById(R.id.profile_image);
+
+//
+
+        cookingStatus =(TextView) root.findViewById(R.id.cooking_status);
+
+        Animation shake = AnimationUtils.loadAnimation(getActivity(), R.anim.shake);
+        cookingStatus.startAnimation(shake);
+
+
         storeName = (TextView) root.findViewById(R.id.seller_name);
+
         storeDescription = (TextView) root.findViewById(R.id.store_description);
         coordinatorLayoutView = root.findViewById(R.id.snackbarPosition);
         ratingBar = (RatingBar) root.findViewById(R.id.rating_bar);

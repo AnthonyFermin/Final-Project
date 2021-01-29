@@ -19,16 +19,34 @@
         android:gravity="center_horizontal"
         android:id="@+id/cart_text"/>
 
-    <android.support.design.widget.FloatingActionButton
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/checkoutButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="end"-->
+        <!--android:layout_marginEnd="5dp"-->
+        <!--android:src="@drawable/checkout"-->
+        <!--app:backgroundTint="#D42028"-->
+        <!--app:elevation="6dp"-->
+        <!--app:pressedTranslationZ="12dp"/>-->
+
+    <ImageButton
         android:id="@+id/checkoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_alignParentEnd="true"
         android:layout_gravity="end"
         android:layout_marginEnd="5dp"
         android:src="@drawable/checkout"
-        app:backgroundTint="#D42028"
-        app:elevation="6dp"
-        app:pressedTranslationZ="12dp"/>
+        android:layout_marginRight="25dp"
+        android:padding="15dp"
+        android:background = "@drawable/roundedbutton"
+        android:layout_above="@+id/seller_items_list"
+        android:elevation="6dp"
+        
+        />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
