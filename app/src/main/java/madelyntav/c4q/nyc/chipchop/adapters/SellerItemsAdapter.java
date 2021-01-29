@@ -30,9 +30,6 @@ import madelyntav.c4q.nyc.chipchop.SellActivity;
 import madelyntav.c4q.nyc.chipchop.fragments.Fragment_Seller_CreateItem;
 import madelyntav.c4q.nyc.chipchop.fragments.Fragment_Seller_Items;
 
-/**
- * Created by c4q-anthonyf on 8/14/15.
- */
 public class SellerItemsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private DBCallback itemRemovalCallback;

@@ -27,9 +27,6 @@ import madelyntav.c4q.nyc.chipchop.DBCallback;
 import madelyntav.c4q.nyc.chipchop.SignUpFirstActivity;
 import madelyntav.c4q.nyc.chipchop.SignUpSecondActivity;
 
-/**
- * Created by c4q-madelyntavarez on 8/12/15.
- */
 public class DBHelper extends Firebase {
     static DBHelper fireBaseRef;
     private static final String URL = "https://chipchop.firebaseio.com/";
@@ -263,7 +260,6 @@ public class DBHelper extends Firebase {
                 mSuccess = true;
 
                 UID = String.valueOf(stringObjectMap.get("uid"));
-
 
                 SharedPreferences sharedPreferences = mContext.getSharedPreferences("New User", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();

@@ -24,9 +24,6 @@ import madelyntav.c4q.nyc.chipchop.DBObjects.Item;
 import madelyntav.c4q.nyc.chipchop.FoodItemSelectDialog;
 import madelyntav.c4q.nyc.chipchop.R;
 
-/**
- * Created by c4q-anthonyf on 8/14/15.
- */
 public class FoodListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<Item> foodItems;
